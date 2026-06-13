@@ -4,13 +4,15 @@
   become: yes
 
   tasks:
+
     - name: Copy WAR file to Tomcat
       copy:
-        src: "target/Mw.war"
-        dest: "/opt/tomcat/webapps/Mw.war"
+        src: target/Mw.war
+        dest: /opt/tomcat/webapps/Mw.war
         remote_src: no
 
     - name: Restart Tomcat
-      systemd:
-        name: tomcat
-        state: restarted
+      shell: |
+        /opt/tomcat/bin/shutdown.sh || true
+        sleep 5
+        /opt/tomcat/bin/startup.sh
