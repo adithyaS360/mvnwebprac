@@ -11,8 +11,4 @@
         dest: /opt/tomcat/webapps/Mw.war
         remote_src: no
 
-    - name: Restart Tomcat
-      shell: |
-        /opt/tomcat/bin/shutdown.sh || true
-        sleep 5
-        /opt/tomcat/bin/startup.sh
+    
