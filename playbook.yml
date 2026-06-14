@@ -10,5 +10,3 @@
         src: target/Mw.war
         dest: /opt/tomcat/webapps/Mw.war
         remote_src: no
-
-    
